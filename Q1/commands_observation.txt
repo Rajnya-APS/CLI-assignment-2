@@ -1,0 +1,93 @@
+Command:
+mkdir submissions
+
+Observation:
+Created a directory named "submissions" to store all student assignment files.
+
+
+
+Command:
+cd submissions
+
+Observation:
+Changed the current working directory to the submissions folder.
+
+
+
+Command:
+echo "Python Assignment" > student1.txt
+
+Observation:
+Created a sample assignment file named student1.txt with content.
+
+-
+
+Command:
+echo "Python Assignment" > student2.txt
+
+Observation:
+Created another assignment file with the same content to simulate a duplicate submission.
+
+
+
+Command:
+echo "Linux Assignment" > student3.txt
+
+Observation:
+Created a unique assignment file with different content.
+
+
+
+Command:
+cd ..
+
+Observation:
+Returned to the parent directory to create and execute the shell script.
+
+
+
+Command:
+nano duplicate_backup.sh
+
+Observation:
+Opened the Nano text editor to write the shell script.
+
+
+
+Command:
+chmod +x duplicate_backup.sh
+
+Observation:
+Granted execute permission to the shell script so it can be run directly.
+
+
+
+Command:
+  ./duplicate_backup.sh
+
+Observation:
+Executed the shell script. It detected duplicate files, backed up unique files, generated a report, and stored any errors separately.
+
+
+
+Command:
+ls backup
+
+Observation:
+Displayed the contents of the backup directory to verify that only unique files were copied.
+
+
+
+Command:
+cat report.txt
+
+Observation:
+Displayed the generated report showing the number of processed, duplicate, and backed-up files.
+
+
+
+Command:
+cat errors.txt
+
+Observation:
+Displayed the error log. Since no errors occurred during execution, the file remained empty.
