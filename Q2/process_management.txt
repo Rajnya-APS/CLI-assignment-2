@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <signal.h>
+#include <stdlib.h>
+
+int main() {
+    pid_t pid = fork();
+
+    if (pid < 0) {
+        printf("Fork failed.\n");
+        return 1;
+    }
+
+    if (pid == 0) {
+        printf("Child Process Created\n");
+        printf("Child PID: %d\n", getpid());
+
+        while (1) {
+            printf("Child is running...\n");
+            sleep(1);
+        }
+    }
+    else {
+        printf("Parent Process\n");
+        printf("Parent PID: %d\n", getpid());
+        printf("Child PID: %d\n", pid);
+
+        sleep(5);
+
+        printf("Sending SIGTERM to child...\n");
+        kill(pid, SIGTERM);
+
+        wait(NULL);
+
+        printf("Child terminated successfully.\n");
+        printf("Zombie process prevented.\n");
+    }
+
+    return 0;
+}
