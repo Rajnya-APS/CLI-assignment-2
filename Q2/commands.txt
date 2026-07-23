@@ -1,0 +1,35 @@
+Command:
+mkdir Q2
+
+Observation:
+Created a directory to store all files related to Question 2.
+
+
+
+Command:
+cd Q2
+
+Observation:
+Changed the current working directory to the Q2 folder.
+
+
+
+Command:
+nano process_management.c
+
+Observation:
+Opened the Nano text editor to write the C program for process creation and management.
+
+
+Command:
+gcc process_management.c -o process_management
+
+Observation:
+Compiled the C source code and generated an executable file named process_management.
+
+
+Command:
+./process_management
+
+Observation:
+Executed the program. A child process was created using fork(), the parent monitored it, terminated it using SIGTERM, and wait() prevented the child from becoming a zombie process.
