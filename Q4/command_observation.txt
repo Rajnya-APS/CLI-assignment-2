@@ -1,0 +1,61 @@
+Command:
+mkdir Q4
+
+Observation:
+Created a directory to store all files related to Question 4.
+
+
+
+Command:
+cd Q4
+
+Observation:
+Changed the current working directory to the Q4 folder.
+
+
+
+Command:
+nano server.log
+
+Observation:
+Opened the Nano editor to create a sample server log file.
+
+
+
+Command:
+tail -f server.log | grep "ERROR" >> report.txt 2>/dev/null
+
+Observation:
+Continuously monitored the log file, filtered only ERROR messages, appended them to report.txt, and suppressed unwanted error messages.
+
+
+
+Command:
+echo "ERROR: Disk Full" >> server.log
+
+Observation:
+Added a new ERROR entry to the log file for testing the monitoring pipeline.
+
+
+
+Command:
+echo "INFO: User Logout" >> server.log
+
+Observation:
+Added an INFO entry to verify that non-ERROR messages are ignored.
+
+
+
+Command:
+tail -f server.log | grep --line-buffered "ERROR" >> report.txt 2>/dev/null
+
+Observation:
+Continuously monitored the log file, filtered ERROR messages in real time, appended them to report.txt, and redirected unwanted error messages to /dev/null.
+
+
+
+Command:
+cat report.txt
+
+Observation:
+Displayed the report file containing only the extracted ERROR messages.
