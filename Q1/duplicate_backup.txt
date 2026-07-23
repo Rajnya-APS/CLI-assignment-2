@@ -1,0 +1,39 @@
+#!/bin/bash
+
+mkdir -p backup
+
+processed=0
+duplicates=0
+backedup=0
+
+> report.txt
+> errors.txt
+
+declare -A files
+
+for file in submissions/*
+do
+    if [ -f "$file" ]; then
+
+        processed=$((processed+1))
+
+        checksum=$(md5sum "$file" 2>>errors.txt | awk '{print $1}')
+
+        if [[ -z "${files[$checksum]}" ]]; then
+
+            files[$checksum]=$file
+            cp "$file" backup/ 2>>errors.txt
+            backedup=$((backedup+1))
+
+        else
+
+            duplicates=$((duplicates+1))
+
+        fi
+
+    fi
+done
+
+echo "Files Processed : $processed" > report.txt
+echo "Duplicate Files : $duplicates" >> report.txt
+echo "Files Backed Up : $backedup" >> report.txt
