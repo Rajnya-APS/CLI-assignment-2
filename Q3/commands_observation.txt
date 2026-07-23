@@ -1,0 +1,45 @@
+Command:
+mkdir Q3
+
+Observation:
+Created a directory to store all files related to Question 3.
+
+
+
+Command:
+cd Q3
+
+Observation:
+Changed the current working directory to the Q3 folder.
+
+
+
+Command:
+nano employee_database.c
+
+Observation:
+Opened the Nano text editor to write the C program using Linux system calls.
+
+
+
+Command:
+gcc employee_database.c -o employee_database
+
+Observation:
+Compiled the C source code and generated an executable named employee_database.
+
+
+
+Command:
+./employee_database
+
+Observation:
+Executed the program. Employee records were written to the file, one record was updated using lseek(), and all records were displayed by reading them from the file.
+
+
+
+Command:
+ls
+
+Observation:
+Displayed the files in the Q3 directory to verify that employee.dat and the executable were created.
