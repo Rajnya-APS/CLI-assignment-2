@@ -1,0 +1,29 @@
+Command:
+mkdir Q5
+
+Observation:
+Created a directory to store all files related to Question 5.
+
+
+
+Command:
+cd Q5
+
+Observation:
+Changed the current working directory to the Q5 folder.
+
+
+
+Command:
+nano README.md
+
+Observation:
+Opened the Nano editor to write the explanation of vi recovery mechanisms.
+
+
+
+Command:
+cat README.md
+
+Observation:
+Displayed the contents of the README file to verify that the recovery mechanisms and recovery strategy were documented correctly.
